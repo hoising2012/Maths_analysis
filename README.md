@@ -1,3 +1,3 @@
 # Maths_analysis
-rubbish
+discarded
 
