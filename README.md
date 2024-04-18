@@ -1,2 +1,2 @@
-# MATLAB_maths_analysis
+# maths_analysis
 Graph plotting &amp; scratches
