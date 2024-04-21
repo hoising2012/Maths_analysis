@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$a = 1;
+$b = -3;
+$c = -4;
+list($p,$q) = QE($a,$b,$c);
+echo "$p and $q are the roots.";
+function QE($a,$b,$c){
+	$Delta = pow($b,2) - 4*$a*$c;
+    if($Delta < 0){
+    	echo "The roots do not exist.";
+    }else if($Delta == 0){
+    	$x = ((-1)*$b)/(2*$a);
+        return array($x,$x);
+    }else{
+    	$x_1 = ((-1)*$b + sqrt($Delta))/(2*$a);
+        $x_2 = ((-1)*$b - sqrt($Delta))/(2*$a);
+    	return array($x_1,$x_2);
+    }
+}
+?>
+</body>
+</html>
