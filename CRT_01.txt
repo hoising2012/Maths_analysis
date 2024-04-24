@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$p = inverse_modulo_n(4,9);
+$q = elimination(2,20,6);
+$epsilon = 5;
+$F = ($p*$epsilon)%9;
+echo "x = ".$F."mod 9 <br>";
+echo "x = ".$q."mod 10 <br>";
+$N = 9*10;
+$N1 = 10;
+$N2 = 9;
+$x_1 = gmp_invert($N1,$N2);
+$x_2 = gmp_invert($N2,$N1);
+echo "x_1 = ".$x_1.", x_2 =".$x_2;
+echo "<br>";
+$x = $x_1*$N1*$F + $x_2*$N2*$q;
+echo "The result is : ".$x%$N." mod ".$N;
+function elimination($a,$b,$c){
+	      $x = $b%$a;
+          if($x==0){
+          	 $c = $c/$a;          
+          }
+          return $c;
+}
+function inverse_modulo_n($a,$b){
+		$x = "";
+    for($i=0; $i<=$b; $i++){
+    	$F = $a*$i;
+        if($F%$b==1){
+        	$x = $i;
+            return $x;
+        }   
+    }  
+}
+?>
+</body>
+</html>
