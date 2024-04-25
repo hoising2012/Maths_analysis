@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$var = null;
+try {
+    if ($var !== NULL) {
+        echo 'return $this->result[$yellow]';
+    }
+    else {
+        throw new Exception('The $var does not exist');
+    }
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+?>
+</body>
+</html>
