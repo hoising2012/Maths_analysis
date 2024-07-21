@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+echo "24 possible permutations:"."<br>";
+echo "<br>";
+
+echo substr("ABCD",0)."<br>";
+echo substr("ABCD",1);
+echo substr("ABCD",0,1)."<br>";
+echo substr("ABCD",2);
+echo substr("ABCD",0,2)."<br>";
+echo substr("ABCD",3);
+echo substr("ABCD",0,3)."<br>";
+echo "<br>";
+
+echo substr("BADC",0)."<br>";
+echo substr("BADC",1);
+echo substr("BADC",0,1)."<br>";
+echo substr("BADC",2);
+echo substr("BADC",0,2)."<br>";
+echo substr("BADC",3);
+echo substr("BADC",0,3)."<br>";
+echo "<br>";
+
+echo substr("BACD",0)."<br>";
+echo substr("BACD",1);
+echo substr("BACD",0,1)."<br>";
+echo substr("BACD",2);
+echo substr("BACD",0,2)."<br>";
+echo substr("BACD",3);
+echo substr("BACD",0,3)."<br>";
+echo "<br>";
+
+echo substr("ABDC",0)."<br>";
+echo substr("ABDC",1);
+echo substr("ABDC",0,1)."<br>";
+echo substr("ABDC",2);
+echo substr("ABDC",0,2)."<br>";
+echo substr("ABDC",3);
+echo substr("ABDC",0,3)."<br>";
+echo "<br>";
+
+echo substr("DBCA",0)."<br>";
+echo substr("DBCA",1);
+echo substr("DBCA",0,1)."<br>";
+echo substr("DBCA",2);
+echo substr("DBCA",0,2)."<br>";
+echo substr("DBCA",3);
+echo substr("DBCA",0,3)."<br>";
+echo "<br>";
+
+echo substr("ACBD",0)."<br>";
+echo substr("ACBD",1);
+echo substr("ACBD",0,1)."<br>";
+echo substr("ACBD",2);
+echo substr("ACBD",0,2)."<br>";
+echo substr("ACBD",3);
+echo substr("ACBD",0,3)."<br>";
+echo "<br>";
+?>
+</body>
+</html>
