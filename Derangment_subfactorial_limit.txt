@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$factorial = 1;
+$Sum = 1;
+for($i=1; $i<=99; $i++){
+	 $factorial = $factorial*$i;
+	 $Sum += 1/$factorial;
+}
+echo "e is irrational, such that it is equal to ".round($Sum,3);
+?>
+</body>
+</html>
