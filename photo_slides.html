@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>Hong Kong Travel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body>
+
+<h2 class="w3-center">Hong Kong</h2>
+
+<div class="w3-content" style="max-width:400px">
+  <div class="mySlides w3-container w3-indigo w3-xxlarge w3-card-4">
+    <h1><b>Remarkable~</b></h1>
+    <h1><i>Hong Kong</i></h1>
+    <h1><i>We like Hong Kong</i></h1>
+  </div>
+
+  <img class="mySlides" src="Tsim_Sha_Tsui.jpg" style="width:100%">
+
+  <div class="mySlides w3-container w3-xlarge w3-orange w3-card-4">
+    <p><span class="w3-tag w3-red">Relax!</span>
+    <p>Juan Burdi</p>
+    <p>Only $99 !!!</p>
+  </div>
+
+  <img class="mySlides" src="Teddy_bear.jpg" style="width:100%">
+
+	<div class="mySlides w3-container w3-green w3-xxlarge w3-card-4">
+    	<h1><b>WOWOWO~</b></h1>
+    	<h1><i>It's Show Time!!!</i></h1>
+    	<h1><i>YEAH~ YA~ YA~</i></h1>
+  	</div>
+
+	<img class="mySlides" src="Guitarist.jpg" style="width:100%">
+</div>
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 2000); 
+}
+</script>
+
+</body>
+</html>
