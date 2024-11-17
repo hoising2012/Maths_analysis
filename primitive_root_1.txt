@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$a=3;
+$b=7;
+$g = gcd($a,$b);
+if($g==1){
+	echo $a." & ".$b." are coprime.<br \>";
+}else{
+	echo $a." & ".$b." are not coprime.<br \>";
+}
+$P = primitive_root_check($a,$b);
+$Q = Batch($b);
+sort($P);
+$result = array_intersect($Q, $P);
+echo "The existance of batches: ";
+foreach ($result as $x) {
+  echo "$x ";
+}
+echo "<br \>";
+$arrlength = count($result);
+if($arrlength < ($b-1)){
+	echo $a." is not a primitive root modular ".$b.".";
+}else{
+	echo $a." is a primitive root modular ".$b.".";
+}
+function Batch($N){
+		$Arr = array();
+        for($i=1;$i<$N;$i++){
+        	array_push($Arr,$i);        
+        }
+		return $Arr;
+}
+function primitive_root_check($x,$n){
+			$Arr = array();
+        for($i=1; $i<$n; $i++){
+        	$y = pow($x,$i);
+            $z = $y%$n;
+        	array_push($Arr,$z);	
+        }
+        return $Arr;
+}
+function gcd($m, $n){
+		$factors=array();
+        $i = 1;
+        while($i<=$m){
+                 if(($m%$i==0) && ($n%$i==0)){
+                 array_push($factors,$i);
+            }
+            $i++;
+         }
+        $result = max($factors);
+        return $result;
+}
+?>
+</body>
+</html>
