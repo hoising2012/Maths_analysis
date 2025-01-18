@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+echo "To illustrate Gauss' lemma, let p = 13 and a = 5.";
+echo "<br \>";
+$p = 13;
+$a = 5;
+$q = ($p - 1)/2;
+$A = array();
+echo "The relevant sequence of integers is: ";
+for($i=1; $i<=$q; $i++){
+	$x = $a*$i;
+    $A[] = $x%13;
+    echo $x." ";
+}
+echo "<br \>";
+echo "After modulo 13, the sequence is : ";
+$count = 0;
+foreach ($A as $z){
+	echo $z." ";
+    if($z>=round($p/2)){
+    	$count++;
+    }
+} 
+$G = pow(-1,$count);
+echo "<br \>";
+echo "So n = ".$count.", the prediction of Gauss' lemma is ".$G;
+echo "<br \>";
+if($G==1){
+	echo "Therefore, ".$a." is a quadratic residue modulo ".$p;
+}else{
+	echo "Therefore, ".$a." is a not quadratic residue modulo ".$p;
+}
+?>
+</body>
+</html>
