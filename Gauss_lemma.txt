@@ -11,7 +11,7 @@ $A = array();
 echo "The relevant sequence of integers is: ";
 for($i=1; $i<=$q; $i++){
 	$x = $a*$i;
-    $A[] = $x%13;
+    $A[] = $x%$p;
     echo $x." ";
 }
 echo "<br \>";
