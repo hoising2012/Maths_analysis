@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$phi = array();
+echo "<h3>φ(n) for 1 ≤ n ≤ 100</h3>";
+echo "<br \>";
+echo "<table>";
+echo "<tr>";
+echo "<th>+</th>";
+echo "<th>1</th>";
+echo "<th>2</th>";
+echo "<th>3</th>";
+echo "<th>4</th>";
+echo "<th>5</th>";
+echo "<th>6</th>";
+echo "<th>7</th>";
+echo "<th>8</th>";
+echo "<th>9</th>";
+echo "<th>10</th>";
+echo "</tr>";
+for($j=0; $j<=90; $j+=10){
+	echo "<tr>";
+    echo "<td>$j</td>";
+	for($i=1; $i<=10; $i++){    	
+    	$k = $i - 1;
+        $n = $j/10;
+        $phi[$k][$n] = Batch($i+$j);
+        echo "<td>".$phi[$k][$n]."</td>";
+    } 
+    echo "</tr>";
+}
+echo "</table>";
+function Batch($N){
+	$Arr = array();
+		for($i=1; $i<=$N; $i++){
+        	$g = gcd($i,$N);
+        	if($g==1){
+            array_push($Arr,$i);
+            }
+        }
+	return count($Arr);
+}
+function gcd($m, $n){
+		$factors=array();
+        $i = 1;
+        while($i<=$m){
+                 if(($m%$i==0) && ($n%$i==0)){
+                 array_push($factors,$i);
+            }
+            $i++;
+         }
+        $result = max($factors);
+        return $result;
+}
+?>
+</body>
+</html>
