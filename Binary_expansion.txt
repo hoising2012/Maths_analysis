@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$Q = 2025;
+$count = 0;
+$binary_expansion = "";
+while($Q>0){
+	$P = $Q%2;
+    $Q = floor($Q/2);
+    $binary_expansion = $P.$binary_expansion;
+    $count++;
+    if($count%4==0){
+    	$binary_expansion = " ".$binary_expansion;
+    }
+}
+$res = adding_zero_in_front($count, $binary_expansion);
+echo "The binary expansion of 2025 is ".$res;
+function adding_zero_in_front($N, $binary_expansion){
+	$M = $N%4;
+    if($M == 0){
+    	return $binary_expansion;
+    }
+    $K = 4 - $M;
+    for($i = 1; $i<=$K; $i++){
+    		$binary_expansion = "0".$binary_expansion;
+    }
+    return $binary_expansion;
+}
+?>
+</body>
+</html>
