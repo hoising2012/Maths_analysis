@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$Arr = array(1,-2,-8,-35);
+$F = factor(35);
+foreach ($F as $var) {
+		echo "Suppose (x - ".$var.")"." is a factor. ";
+		$X = $Arr[1] + $var;
+        $Y = $Arr[2] + $X*$var;
+        $Z = $Arr[3] + $Y*$var;
+		if($Z == 0){
+        	echo "The quotient is ".$Arr[0]."x^2 + ".$X."x + ".$Y;
+        }
+         echo "<br \>";
+}
+function factor($N){
+		$res = array();
+    for($i = 1; $i<=$N; $i++){
+    	$M = $N % $i;
+        if($M==0){
+        	array_push($res,$i);
+        }
+    }
+    return $res;
+}
+?>
+</body>
+</html>
