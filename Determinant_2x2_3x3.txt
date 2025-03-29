@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$Arr = array(array(3,-1),array(4,3));
+$Arr_1 = array(array(3,7),array(1,-4));
+$det = det_two_by_two_matrix($Arr);
+$det_1 = det_two_by_two_matrix($Arr_1);
+echo "The determinant |A| is ".$det;
+echo "<br \>";
+echo "The determinant |B| is ".$det_1;
+echo "<br \>";
+$Arr_2 = array(array(4,-3,5),array(1,0,3),array(-1,5,2));
+$det_2 = det_three_by_three_matrix($Arr_2);
+echo "The determinant 3x3 matrix|C| is ".$det_2;
+echo "<br \>";
+$Arr_3 = array(array(-2,-1,2),array(2,1,4),array(-3,3,-1));
+$det_3 = det_three_by_three_matrix($Arr_3);
+echo "The determinant 3x3 matrix|D| is ".$det_3;
+echo "<br \>";
+function det_three_by_three_matrix($C){
+	$res = $C[0][0]*$C[1][1]*$C[2][2]+
+$C[0][1]*$C[1][2]*$C[2][0]+
+$C[0][2]*$C[1][0]*$C[2][1]-
+$C[0][0]*$C[1][2]*$C[2][1]-
+$C[0][1]*$C[1][0]*$C[2][2]-
+$C[0][2]*$C[1][1]*$C[2][0];
+	return $res;
+}
+function det_two_by_two_matrix($B){
+		$res = $B[0][0]*$B[1][1]-$B[0][1]*$B[1][0];
+		return $res;
+}
+?>
+</body>
+</html>
