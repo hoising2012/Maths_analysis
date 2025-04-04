@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+textarea {
+  resize: none;
+}
+</style>
+</head>
+<body>
+
+<h1>Healthy Eating Food Pyramid</h1>
+
+<p><label for="w3review">Food categories:</label></p>
+
+<div class="custom-select" style="width:200px;">
+  <select id = "Foodcategories">
+    <option value="meat">meat</option>
+    <option value="vegetable">vegetable</option>
+    <option value="strach">strach</option>
+    <option value="fruit">fruit</option>
+    <option value="oil">oil</option>
+    <option value="milk">milk</option>
+  </select>
+</div>
+
+
+<textarea id="FoodName" name="FoodName" rows="4" cols="50">
+Please enter food name.
+</textarea>
+
+<br \>
+<input type="submit" value="Submit" onclick="myFunction();">
+
+<h3>Meat: </h3>
+<ul class = "meat"></ul>
+<h3>Vegetable: </h3>
+<ul class = "vegetable"></ul>
+<h3>Strach: </h3>
+<ul class = "strach"></ul>
+<h3>Fruit: </h3>
+<ul class = "fruit"></ul>
+<h3>Oil: </h3>
+<ul class = "oil"></ul>
+<h3>Milk: </h3>
+<ul class = "milk"></ul>
+
+
+<script>
+function myFunction() {
+
+const categories = document.getElementById("Foodcategories").value;
+
+// Create an "li" node:
+const node = document.createElement("li");
+
+// Create a text node:
+var Foodname = document.getElementById("FoodName").value;
+var textnode = document.createTextNode(Foodname);
+
+// Append the text node to the "li" node:
+node.appendChild(textnode);
+
+// Append the "li" node to the list:
+document.getElementsByClassName(categories)[0].appendChild(node);
+}
+</script>
+</body>
+</html>
