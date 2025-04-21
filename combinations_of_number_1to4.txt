@@ -2,7 +2,11 @@
 <html>
 <body>
 <?php
-echo "The combinations of number 1-4 <br>\n";
+echo "The combinations of number 1-4: <br>\n";
+	for($i=1; $i<=4; $i++){
+    		echo "[".$i."]";
+   	}
+    	echo "<br \>";
 	for($i = 1; $i<=4; $i++){
       		for($j = 1; $j<=4; $j++){
       			if(($i!=$j)&&($i<$j)){
@@ -20,6 +24,13 @@ echo "The combinations of number 1-4 <br>\n";
             		}
             	}
        	}
+	echo "<br \>";
+        $str = "";
+        for($i=1; $i<=4; $i++){
+    		$str .= $i.",";
+    	}
+        $str = rtrim($str, ',');
+        echo "[".$str."]";
 ?>
 </body>
 </html>
