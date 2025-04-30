@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$phi_of_54 = 18;
+$N = 11;
+$Arr = array();
+echo "The batches: ";
+for($i=1; $i<=$phi_of_54; $i++){
+	$g = gcd($i,$phi_of_54);
+    if($g == 1){
+    	echo $i." ";
+        array_push($Arr,$i);
+    }
+}
+echo "<br \>";
+echo "The primitive roots modulo 54: ";
+foreach($Arr as $k){
+	$M = pow($N,$k);
+	$x = $M%54;
+    echo $x." ";
+}
+function gcd($m, $n){
+		$factors=array();
+        $i = 1;
+        while($i<=$m){
+                 if(($m%$i==0) && ($n%$i==0)){
+                 array_push($factors,$i);
+            }
+            $i++;
+         }
+        $result = max($factors);
+        return $result;
+}
+?>
+</body>
+</html>
