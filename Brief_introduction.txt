@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$name = "Jaap";
+echo "Hello there! <br \>";
+echo "My name is ".$name.". <br \>";
+echo "I am the developer of Kubernetes. <br \>";
+echo "Welcome to use K8s and share your experience! <br \>";
+echo "Cheers~";
+?>
+</body>
+</html>
