@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$numbers = array(1, 2, 3, 4, 5);
+foreach($numbers as $i){
+	printing_star($i);
+    echo "<br \>";
+}       
+function printing_star($n){
+    	for($i = 1; $i<=$n; $i++){
+          	echo "#";
+          		for($j = $i; $j<$n; $j++){
+             	   if($i==1){
+                   echo " #";
+                   }
+          	}
+            if($i!=1){
+            printing_square($n-1);
+            }
+            echo "<br \>";
+          }
+    } 
+function printing_square($n){
+         for($j = 1; $j<=$n; $j++){
+             echo " *";   
+         }
+    }
+?>
+</body>
+</html>
