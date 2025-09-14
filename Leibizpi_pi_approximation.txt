@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$x = Leibizpi(198);
+$y = Leibizpi(200);
+echo "The Pi approximation is between ".(4*$y)." and ".(4*$x).".";
+function Leibizpi($n){
+	$Pi_approximation = "";
+    $Pole = 1;
+	for($i=1; $i<=$n; $i+=2){
+    $Pi_approximation += $Pole*(1/$i);
+	$Pole *= -1;
+    }
+    $Pi_approximation = round($Pi_approximation,3);
+    return $Pi_approximation;
+}
+?>
+</body>
+</html>
