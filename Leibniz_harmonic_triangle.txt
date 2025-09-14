@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$Arr = array(array());
+for($i=1; $i<=5; $i++){
+	for($j=1; $j<=5; $j++){
+			if($i==1){
+            	$Arr[$i-1][$j-1] = 1/$j;
+            }else if(($j==1)&&($i>1)){
+            	$Arr[$i-1][$j-1] = 1/$i; 
+            }else if(($j!=5)&&($i!=5)){
+            	$Arr[$i-1][$j-1] = $Arr[$i-2][$j-1] - $Arr[$i-2][$j];
+            }        
+	}
+}
+echo "Leibniz harmonic triangle <br \>";
+for($i=0; $i<=4; $i++){
+	echo "Row ".($i+1).": ";
+	for($j=0; $j<=$i; $j++){
+    	$k = $i - $j;
+        echo " ";
+        printf("%s\n", float2rat($Arr[$k][$j])); 
+    }
+     echo "<br \>";
+}
+function float2rat($n, $tolerance = 1.e-6) {
+    $h1=1; $h2=0;
+    $k1=0; $k2=1;
+    $b = 1/$n;
+    do {
+        $b = 1/$b;
+        $a = floor($b);
+        $aux = $h1; $h1 = $a*$h1+$h2; $h2 = $aux;
+        $aux = $k1; $k1 = $a*$k1+$k2; $k2 = $aux;
+        $b = $b-$a;
+    } while (abs($n-$h1/$k1) > $n*$tolerance);
+
+    return "$h1/$k1";
+}
+?>
+</body>
+</html>
