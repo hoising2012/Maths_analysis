@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.container {
+  display: block;
+  place-items: center; /* Centers both horizontally and vertically */
+  height: 100vh; /* Example: full viewport height for centering */
+  padding: 50px;
+}
+.bucket {
+  width: 200px;
+  height: 200px;
+  background-color: #000000; /* Example color */
+  clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 25% 100%);
+}
+.parent-container {
+  display: flex;           /* Enables Flexbox */
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  /* Add height to the container for vertical centering to be visible */
+  height: 50px; 
+}
+.water.active {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Or set initial height to 0 and animate it */
+  background-color: #009ae6; /* Water color */
+  transform: translateY(100%); /* Start completely below the container */
+  animation: fillWater 3s ease-out forwards; /* Animation properties */
+}
+@keyframes fillWater {
+  0% {
+    transform: translateY(100%); /* Water at the bottom */
+  }
+  25% {
+    transform: translateY(50%); /* Water at the bottom */
+  }
+  50% {
+    transform: translateY(25%); /* Water at the bottom */
+  }
+  100% {
+    transform: translateY(0%); /* Water fills to the top */
+  }
+}
+</style>
+</head>
+<body>
+<h1>Bucket Problem</h1>
+<div class="container">
+<div class="bucket">
+<div class="water"></div>
+</div>
+<div class="parent-container">
+<button type="button">Filler!</button>
+</div>
+</div>
+<script>
+const button = document.querySelector('button');
+const currentActive = document.getElementsByClassName('water');
+currentActive[0].classList.remove('active'); 
+button.addEventListener('click', event => {
+  currentActive[0].classList.add('active'); 
+  console.log('click');
+})
+</script>
+</body>
+</html>
