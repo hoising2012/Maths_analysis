@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.lined-paper {
+  background-color: #fcfaf0; /* A light, off-white paper color */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 24px, /* Space between lines */
+    #e0e0e0 24px, /* Line color */
+    #e0e0e0 25px /* Line thickness */
+  );
+  padding: 20px 40px; /* Padding for content inside the paper */
+  position: relative; /* Needed for positioning the margin line */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+}
+
+.lined-paper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px; /* Position of the left margin */
+  height: 100%;
+  border-left: 1px solid #ff6666; /* Red margin line */
+}
+</style>
+</head>
+<body>
+<div class="lined-paper">
+  <h3><b>Feedback about my works</b></h3>
+  <p>Five years have passed, and I've remained actively involved in the IT industry.</p>
+  <p>One thing that still bothers me is the use of smartphones in Hong Kong.</p> 
+  <p>Users know how expensive smartphones are; they pay for a phone and expect telecommunications services.</p> 
+  <p>I also worked in a data center before, where building a cloud infrastructure required a lot of equipment, such as servers, computers, firewalls, switches, and backup power.</p> 
+  <p>Technically, that equipment was designed using X-ray, Q-tron, and kernel fission principles.</p>
+  <p>I'm a programmer at Arm, responsible for writing code.</p> 
+  <p>I designed Kubernetes using Web and MATLAB, and my teacher supported us with ASP.NET.</p> 
+  <p>Microsoft acquired it after learning about it. <p>Kubernetes is now widely used, and my coding work has come to an end.</p> 
+  <p>I hope that while using Kubernetes, everyone will support ARM's development.</p> 
+  <p>Special thanks to Michael and Presh, jockeys at the Hong Kong Jockey Club.</p> 
+  <p>Their teaching was very difficult because the intelligence of the Chinese people is only average.</p> 
+  <p>I will continue to live in Hong Kong, and I hope my parents know about my contributions.</p>
+</div>
+</body>
+</html>
