@@ -33,5 +33,5 @@ $DM = $A + $h * ($total_fu/$total);
 echo $DM;
 ?>
 </body>
-
 </html>
+
