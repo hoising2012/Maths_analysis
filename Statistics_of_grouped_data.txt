@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+<body>
+<?php
+$classIntervals = [
+    ['min' => 50, 'max' => 70, 'label' => '50-70', 'frequency' => 15],
+    ['min' => 70, 'max' => 90, 'label' => '70-90', 'frequency' => 10],
+    ['min' => 90, 'max' => 110, 'label' => '90-110', 'frequency' => 20],
+    ['min' => 110, 'max' => 130, 'label' => '110-130', 'frequency' => 22],
+    ['min' => 130, 'max' => 150, 'label' => '130-150', 'frequency' => 16],
+     ['min' => 150, 'max' => 170, 'label' => '150-170', 'frequency' => 17]
+];
+$A = 100;
+$h = 20;
+$groupedData = [];
+$total = "";
+foreach ($classIntervals as $interval) {
+    $groupedData[$interval['label']] = ['frequency' => $interval['frequency'], 'midpoint' => ($interval['min'] + $interval['max']) / 2 ];
+    $total += $interval['frequency'];
+}
+print_r($groupedData);
+echo "<br \>";
+$groupedData_1 = [];
+$total_fu = "";
+foreach ($classIntervals as $interval) {
+    $groupedData_1[$interval['label']] = ['mu' => (($interval['min'] + $interval['max']) / 2 - $A)/$h, 'fu' => (($interval['min'] + $interval['max']) / 2 - $A)/$h * $interval['frequency'] ];
+    $total_fu += (($interval['min'] + $interval['max']) / 2 - $A)/$h * $interval['frequency'];
+}
+print_r($groupedData_1);
+echo "<br \>";
+echo "Step Deviation of Mean: ";
+$DM = $A + $h * ($total_fu/$total);
+echo $DM;
+?>
+</body>
+</html>
