@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.bonfire {
+  position: relative; /* Needed for positioning fire elements */
+  top: 200px;
+}
+.bonfire::before,
+.bonfire::after {
+  content: '';
+  position: absolute; /* Position and size these pseudo-elements to represent flames */
+  bottom: 0;
+  left: 200px;
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(to top, orange, red, transparent); /* Flame colors */
+  border-radius: 50% 50% 0 0; /* Flame shape */
+  filter: blur(10px); /* Soften the edges */
+  animation: fire-animation 2s infinite alternate; /* Animate for flickering */
+}
+.bonfire::after {
+  animation-delay: 1s; /* Offset for a more dynamic flicker */
+}
+@keyframes fire-animation {
+  0% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-50%) scaleY(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 0.8;
+  }
+}
+.log_1 {
+  position: absolute;
+  width: 100px; /* Adjust size as needed */
+  height: 20px;
+  top: 10px;
+  left: 145px;
+  background-color: #8B4513; /* Brown color for wood */
+  border-radius: 5px;
+  margin: 5px;
+  transform: rotate(15deg); /* Slight rotation for a more natural look */
+}
+.log_2 {
+  position: absolute;
+  width: 100px; /* Adjust size as needed */
+  height: 20px;
+  top: 10px;
+  left: 145px;
+  background-color: #8B4513; /* Brown color for wood */
+  border-radius: 5px;
+  margin: 5px;
+  transform: rotate(-15deg); /* Slight rotation for a more natural look */
+}
+</style>
+</head>
+<body>
+<h1>Wood and fire</h1>
+<div class="bonfire">
+  <div class="log_1"></div>
+  <div class="log_2"></div>
+</div>
+</body>
+</html>
